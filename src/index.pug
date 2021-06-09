@@ -1,0 +1,19 @@
+
+dialog#modal.modal
+  .modal__message
+    h1.modal__title WINNER
+    p.modal__text texto temporaneo
+  button.modal__reset(onclick="closeModal()") Reset
+
+.container
+  //- .mode
+  //-   button.mode__button(onclick="selectMode('easy')") easy
+  //-   button.mode__button(onclick="selectMode('normal')") normal
+    button.mode__button(onclick="selectMode('hard')") hard
+  .score
+    .score__moves
+      p 
+    .score__reset
+      button.score__reset(onclick="resetGame()")
+        i.fas.fa-undo-alt
+  ul.memory-game

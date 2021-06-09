@@ -1,0 +1,95 @@
+// COLOR VARIABLES
+$bg-gradient1: rgba(131, 58, 180, 1);
+$bg-gradient2: rgba(252, 176, 69, 1);
+$t-white: #eee;
+// MIXINS
+
+// START
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+container {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, $bg-gradient1 0%, $bg-gradient2 100%);
+}
+
+.modal {
+  top: calc(50% - 175px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  z-index: 10;
+  &__message {
+    flex: auto;
+    width: 100%;
+  }
+  &__title {
+    margin-top: 2em;
+  }
+  &__text {
+    margin-top: 2em;
+  }
+  &__reset {
+    margin: 4em auto 2em;
+    min-width: 50%;
+  }
+}
+
+.score {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: $t-white;
+  &__reset {
+    border: none;
+    background: transparent;
+    i {
+      color: $t-white;
+    }
+  }
+}
+
+.memory-game {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6b4fd0e0;
+  border-radius: 5px;
+  i {
+    transform: scale(0);
+    transition: transform 0.8s;
+  }
+  &.flipshow {
+    i {
+      transform: scale(1);
+    }
+  }
+  &.hasMatch {
+    i {
+      transform: scale(1);
+    }
+  }
+}
